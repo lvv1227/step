@@ -9,7 +9,7 @@ while not over:
         data=conn.recv(1024)
         #print("received",data)
         if not data: break
-        if data == 'close':
+        if data.find('close')!=-1:
             conn.close()
             s.close()
             over=True
